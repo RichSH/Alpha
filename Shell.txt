@@ -1,0 +1,35 @@
+control flow
+
+for arg in [list]
+do 
+ command(s)... 
+done
+
+while [ condition ]
+do 
+ command(s)... 
+done
+
+until [ condition-is-true ]
+do 
+ command(s)... 
+done
+
+if [condition]
+then
+ command(s)
+elif
+ command(s)
+else
+ command(s)
+fi
+
+function function_name { 
+command... 
+} 
+
+or
+function_name () { 
+command... 
+} 
+

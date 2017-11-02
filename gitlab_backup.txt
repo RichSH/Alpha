@@ -1,0 +1,16 @@
+1, set backup file folder
+   	/opt/gitlab-7.13.1-0/apps/gitlab/htdocs/config/gitlab.yml
+2, backup
+   	cd /opt/gitlab-6.4.3-1/
+	./use_gitlab
+	cd /opt/gitlab-6.4.3-1/apps/gitlab/htdocs
+	bundle exec bin/rake gitlab:backup:create RAILS_ENV=production
+
+3, recovery
+	BACKUP=timestamp_of_backup  #(required if more than one backup exists):
+
+	cd /opt/gitlab-6.4.3-1/
+	./use_gitlab
+	cd /opt/gitlab-6.4.3-1/apps/gitlab/htdocs
+	bundle exec bin/rake  gitlab:backup:restore RAILS_ENV=production   BACKUP=1405247282
+	chown git:git -R /opt/gitlab-6.4.3-1/apps/gitlab/repositories
